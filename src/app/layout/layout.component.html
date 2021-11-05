@@ -1,3 +1,42 @@
-<p>layout works!</p>
+<div class="row">
+  <div class="col-12 col-lg-6">
+    <button class="btn btn-primary btn-block" (click)="openTemplateModal(content)">
+      Abrir modal por template
+    </button>
+  </div>
+  <div class="col-12 col-lg-6">
+    <button class="btn btn-primary btn-block" (click)="openComponentModal()">
+      Abrir modal por componente
+    </button>
+  </div>
+</div>
 
-<p ngbTooltip="Foo">Foo</p>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Modal por Template</h4>
+    <button type="button" class="close ml-0" aria-label="Close"
+      (click)="modal.dismiss('Se cerró por el botón en el header y la acción Dismiss')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pulvinar, risus sit amet pretium consectetur, sem
+      nibh facilisis nibh, et pretium mauris ligula sed magna. Curabitur vestibulum imperdiet nibh, quis imperdiet augue
+      scelerisque ut. Suspendisse velit metus, condimentum non nibh et, tempus tincidunt erat. Donec mattis metus ornare
+      arcu dignissim placerat. Proin tincidunt id urna ac interdum. Nullam a auctor libero, ac egestas elit. Class
+      aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur eu dui nisi. Fusce
+      varius nec nulla sed finibus. Aenean efficitur faucibus libero, non consequat dolor blandit in. Nulla volutpat
+      diam nec ultricies gravida. Maecenas vel nibh at est placerat rhoncus. Nam sit amet mattis dolor. Duis imperdiet
+      faucibus commodo. Aenean id ante mi. Vestibulum nec massa suscipit, eleifend dolor vel, vehicula magna.</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success font-weight-bold"
+      (click)="modal.close('Se cerró por el botón Aceptar y la acción Close')">
+      <i class="fa fa-check fa-fw"></i> Aceptar
+    </button>
+    <button type="button" class="btn btn-danger font-weight-bold"
+      (click)="modal.dismiss('Se cerró por el botón Cerrar y la acción Dismiss')">
+      <i class="fa fa-times fa-fw"></i> Cerrar
+    </button>
+  </div>
+</ng-template>
