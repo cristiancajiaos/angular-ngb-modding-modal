@@ -1,0 +1,18 @@
+@mixin foo {
+  .modal-header {
+    background-color: red;
+    color: black;
+
+    .modal-title {
+      font-size: 2rem !important;
+    }
+  }
+
+  .modal-body {
+    font-size: 2rem !important;
+  }
+}
+
+body {
+  @include foo;
+}
